@@ -1,7 +1,15 @@
 def yellow_pager (string)
-    output_string = ""
+     output_string = ""
+    
     string.each_char do |letter|
-        if letter  == 'a' || letter == 'b' || letter == 'c'
+        if string.length > 10
+        puts 'long error'
+        elsif string.length < 10
+        puts 'short error'
+        elsif string.include? " "
+        puts 'no spaces pls'
+        
+        elsif letter  == 'a' || letter == 'b' || letter == 'c'
             output_string += '2'
         elsif letter  == 'd' || letter == 'e' || letter == 'f'
             output_string += '3'
@@ -17,9 +25,10 @@ def yellow_pager (string)
             output_string += '8'
         elsif letter  == 'w' || letter == 'x' || letter == 'y' || letter == 'z'
             output_string += '9'
+        
         end
     end
     puts output_string
 end
 
-yellow_pager ('abcdefghijk')
+yellow_pager ('abcdefgHIJ'.downcase)
